@@ -1,11 +1,8 @@
 <template>
   <div id="todo-list">
+    <img id="vue-logo" alt="Vue logo" src="../assets/logo.png" />
     <h1>Vue Todo</h1>
     <p>by William C. Duraney</p>
-    <ul>
-      <li>Task 1: {{ task1 }}</li>
-      <li>Task 2: {{ task2 }}</li>
-    </ul>
   </div>
 </template>
 
@@ -18,4 +15,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+#vue-logo {
+  max-height: 15vmin;
+  max-width: 15vmin;
+}
+</style>
