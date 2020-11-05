@@ -3,7 +3,7 @@ import Task from "../models/Task.js";
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 export default async function loadTasks(taskObj) {
-  await delay(3000);
+  await delay(2000);
   if (localStorage.getItem("myVueTodoTasks")) {
     try {
       const data = JSON.parse(localStorage.getItem("myVueTodoTasks"));

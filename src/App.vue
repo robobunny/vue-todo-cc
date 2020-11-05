@@ -1,19 +1,24 @@
 <template>
-  <div
-    id="app"
-    v-loading.fullscreen.lock="loading"
-    element-loading-text="Checking for saved tasks..."
-    element-loading-background="rgba(0, 0, 0, 0.8)"
-  >
+  <div id="app">
     <the-header></the-header>
-    <task-list-add-item-form @add-task="addTask"></task-list-add-item-form>
-    <p id="no-tasks-message" v-if="myTasks.tasks.length === 0">No Todos</p>
-    <tasks-list
-      v-if="myTasks.tasks.length > 0"
-      :tasks="myTasks.tasks"
-      @remove-task="removeTask"
-      @save-tasks="saveTasks"
-    ></tasks-list>
+    <div
+      id="app-container"
+      v-loading="loading"
+      element-loading-text="Checking for saved tasks..."
+      element-loading-background="rgba(0, 0, 0, 0.8)"
+    >
+      <task-list-add-item-form @add-task="addTask"></task-list-add-item-form>
+      <div id="no-tasks-message" v-if="myTasks.tasks.length === 0">
+        <p>No Todos</p>
+        <p>Add some using the form above to get started!</p>
+      </div>
+      <tasks-list
+        v-if="myTasks.tasks.length > 0"
+        :tasks="myTasks.tasks"
+        @remove-task="removeTask"
+        @save-tasks="saveTasks"
+      ></tasks-list>
+    </div>
   </div>
 </template>
 
@@ -58,3 +63,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+#app-container {
+  margin: 0 calc(max(5vw, calc(27vw - 75px)));
+}
+</style>

@@ -1,20 +1,27 @@
 <template>
-  <div class="task-item">
-    <el-button
-      @click="toggleDone"
-      :type="isDone ? 'success' : 'primary'"
-      :plain="!isDone"
-      icon="el-icon-check"
-    ></el-button>
-    <h2 class="task-item--text">{{ text }}</h2>
-    <p class="task-item--created-at">Created: {{ createdAt }}</p>
-    <el-button
-      type="info"
-      icon="el-icon-delete-solid"
-      @click="removeTask"
-      circle
-    ></el-button>
-  </div>
+  <el-card :id="`task-item-${index}`" shadow="hover" class="task-item-card">
+    <div class="task-item-content">
+      <el-button
+        @click="toggleDone"
+        :type="isDone ? 'success' : ''"
+        :plain="!isDone"
+        icon="el-icon-check"
+      ></el-button>
+      <div class="task-info">
+        <p :class="['task-info__text', { 'task-complete': isDone }]">
+          {{ text }}
+        </p>
+        <p class="task-info__created-at">Created: {{ createdAt }}</p>
+      </div>
+      <el-button
+        type="info"
+        icon="el-icon-delete-solid"
+        @click="removeTask"
+        style="display: unset; max-height: "
+        circle
+      ></el-button>
+    </div>
+  </el-card>
 </template>
 
 <script>
@@ -49,4 +56,41 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.task-item-card {
+  margin: 2ch;
+}
+.task-item-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.task-info {
+  flex-grow: 1;
+  margin-left: 12px;
+}
+
+.task-info__text {
+  size: 113%;
+  font-weight: bold;
+}
+
+.task-complete {
+  color: slategrey;
+  font-style: italic;
+  text-decoration: line-through;
+
+  &::after {
+    display: inline-block;
+    content: "Complete!";
+    font-style: normal;
+    text-decoration: none;
+    margin-left: 5px;
+  }
+}
+
+.task-info__created-at {
+  font-style: italic;
+}
+</style>
