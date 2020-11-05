@@ -48,7 +48,7 @@ I did not have enough time to learn the Vue tests well. You can see that my func
 
 ## Architecture
 
-I try to write my code so that it's pretty self-explanatory, but here's an overview of the architeture, just in case something's not clear:
+I try to write my code so that it's pretty self-explanatory, but here's an overview of the architecture, just in case something's not clear:
 
 ### src/models
 
@@ -93,7 +93,7 @@ The Vue app is broken into four components:
     * `TasksList.vue`
         * `TaskItem.vue`
 
-#### TheHeader.vuTe
+#### TheHeader.vue
 
 This displays the Vue logo, the app name, and my name. Pretty basic.
 
