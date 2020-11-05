@@ -1,16 +1,16 @@
 <template>
   <div id="todo-list">
     <img id="vue-logo" alt="Vue logo" src="../assets/logo.png" />
-    <h1>Vue Todo</h1>
-    <p>by William C. Duraney</p>
+    <h1>{{ appTitle }}</h1>
+    <p>by {{ appAuthor }}</p>
   </div>
 </template>
 
 <script>
 export default {
   data: () => ({
-    task1: "It's ya ...",
-    task2: "... Ya homie!"
+    appTitle: "Vue Todo App",
+    appAuthor: "William C. Duraney"
   })
 };
 </script>

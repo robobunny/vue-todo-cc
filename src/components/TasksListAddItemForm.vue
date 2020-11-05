@@ -10,9 +10,7 @@
         v-model="addItemForm.text"
         placeholder="Add a new task ..."
       ></el-input>
-    </el-form-item>
-    <el-form-item>
-      <el-button type="primary" @click="submitForm">Create</el-button>
+      <el-button type="primary" native-type="submit">Create</el-button>
     </el-form-item>
   </el-form>
 </template>
@@ -27,8 +25,9 @@ export default {
     };
   },
   methods: {
-    submitForm: () => {
-      console.log("Submit!");
+    submitForm() {
+      this.$emit("add-task", this.addItemForm.text);
+      this.addItemForm.text = "";
     }
   }
 };
