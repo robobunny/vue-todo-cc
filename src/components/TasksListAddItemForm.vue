@@ -7,10 +7,11 @@
     label-width="15ch"
     @submit.native.prevent="submitForm"
     border="2px"
+    style="display: flex; flex-direction: row;"
   >
     <el-form-item id="form-item__input" label="New Task:">
       <el-input
-        id="add=ietm-input"
+        id="add=item-input"
         v-model="addItemForm.text"
         placeholder="Add a new task ..."
       ></el-input>
@@ -32,11 +33,19 @@ export default {
   },
   methods: {
     submitForm() {
-      this.$emit("add-task", this.addItemForm.text);
-      this.addItemForm.text = "";
+      if (this.addItemForm.text.length === 0) {
+        alert("Add some text so you know what to do!");
+      } else {
+        this.$emit("add-task", this.addItemForm.text);
+        this.addItemForm.resetFields();
+      }
     }
   }
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.form-item__input {
+  flex-grow: 1;
+}
+</style>
