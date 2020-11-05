@@ -36,7 +36,7 @@ I'm going to assume that the four criteria above are the only criteria for the a
 
 I'm going to store the tasks on the browser's `localStorage`. Obviously this has several limitations, like it can easily be deleted and is also limited on space and offers little by way of possible extensibility e.g. via different user logins or encryption. I think it will be sufficient for our purposes though, and much easier than creating a database for the app.
 
-To mimic a call to the serve, (and to flex a bit tbh), I made the `loadTasks()` function wait 2 seconds in order to display a Loading state on my app.
+To mimic a call to the server, (and to flex a bit tbh), I made the `loadTasks()` function wait 2 seconds in order to display a Loading state on my app.
 
 For the UI, I'm using ElementUI, in keeping with the tooling used at your company. To keep the build small, I import only the components I use. This meant installing `babel-plugin-component`. It's the first time I've ever used it, and there's a bit of a learning curve, so things don't look great. I can't get the input form to `flex-grow`, for example.
 
