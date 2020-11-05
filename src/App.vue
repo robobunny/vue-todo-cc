@@ -16,7 +16,7 @@
         v-if="myTasks.tasks.length > 0"
         :tasks="myTasks.tasks"
         @remove-task="removeTask"
-        @save-tasks="saveTasks"
+        @save-tasks="saveMyTasks"
       ></tasks-list>
     </div>
   </div>
@@ -54,6 +54,9 @@ export default {
       this.saveTasks(this.myTasks);
     },
     loadTasks,
+    saveMyTasks() {
+      this.saveTasks(this.myTasks);
+    },
     saveTasks
   },
   mounted() {
