@@ -7,11 +7,10 @@
     label-width="15ch"
     @submit.native.prevent="submitForm"
     border="2px"
-    style="display: flex; flex-direction: row;"
   >
-    <el-form-item id="form-item__input" label="New Task:">
+    <el-form-item class="form-item__input" label="New Task:">
       <el-input
-        id="add=item-input"
+        class="add-item-input"
         v-model="addItemForm.text"
         placeholder="Add a new task ..."
       ></el-input>
@@ -45,7 +44,18 @@ export default {
 </script>
 
 <style scoped>
+#add-item-form {
+  display: flex;
+  flex-direction: row;
+}
 .form-item__input {
   flex-grow: 1;
+  width: 100%;
+}
+.el-form-item__content {
+  width: 100%;
+}
+.add-item-input {
+  width: 100%;
 }
 </style>
