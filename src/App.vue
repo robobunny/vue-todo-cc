@@ -14,7 +14,7 @@
       </div>
       <tasks-list
         v-if="myTasks.tasks.length > 0"
-        :tasks="myTasks.tasks"
+        :tasks="myTasks.getTasks()"
         @remove-task="removeTask"
         @save-tasks="saveMyTasks"
       ></tasks-list>

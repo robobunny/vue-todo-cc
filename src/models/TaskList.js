@@ -18,15 +18,16 @@ export default class TaskList {
 
   getTasks(completedTasksToBottom = false) {
     const sortedTasks = [...this.tasks].sort(
-      (a, b) => a._timestamp - b._timestamp
+      (a, b) => a.timestamp - b.timestamp
     );
 
     if (completedTasksToBottom) {
       return []
         .concat(sortedTasks.filter(task => !task.isDone))
         .concat(sortedTasks.filter(task => task.isDone));
+    } else {
+      return sortedTasks;
     }
-    return sortedTasks;
   }
 
   removeTask(index) {

@@ -33,7 +33,7 @@ const setupTaskListAsync = async () => {
   await delay(25);
   const myTasks = new TaskList();
   // Use .push() so that these tests don't depend on addTask()
-  myTasks.tasks.push(task1, task2, task3);
+  myTasks.tasks.push(task3, task2, task1);
   return Promise.resolve({ myTasks, task1, task2, task3 });
 };
 
