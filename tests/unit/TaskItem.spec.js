@@ -1,4 +1,10 @@
 import { mount } from "@vue/test-utils";
-import TaskList from "@/TaskList.vue";
+import TaskList from "@/components/TaskList.vue";
 
-const wrapper = mount(TaskList);
+describe("TaskItem component", () => {
+  test.todo("Displays task text");
+
+  test.todo("shows `Completed!` when done button is clicked");
+
+  test.todo("emits `removeTask` when delete button is clicked");
+});

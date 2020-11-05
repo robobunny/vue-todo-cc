@@ -5,7 +5,7 @@
       id="app-container"
       v-loading="loading"
       element-loading-text="Checking for saved tasks..."
-      element-loading-background="rgba(0, 0, 0, 0.8)"
+      element-loading-background="rgba(0, 0, 0, 0.7)"
     >
       <task-list-add-item-form @add-task="addTask"></task-list-add-item-form>
       <div id="no-tasks-message" v-if="myTasks.tasks.length === 0">
@@ -67,8 +67,23 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #aaa;
+}
+
 #app-container {
-  margin: 0 calc(max(5vw, calc(27vw - 75px)));
+  background-color: #fff;
+  height: 100vh;
+  margin: 0 calc(max(5vw, calc(20vw - 75px)));
+  padding: 5vh;
+  box-shadow: 0 0 10px 5px lightskyblue;
+  clip-path: inset(0px -15px 0px -15px);
 }
 </style>

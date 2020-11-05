@@ -37,7 +37,7 @@ export default {
         alert("Add some text so you know what to do!");
       } else {
         this.$emit("add-task", this.addItemForm.text);
-        this.addItemForm.resetFields();
+        this.addItemForm.text = "";
       }
     }
   }

@@ -59,6 +59,7 @@ export default {
 <style lang="scss" scoped>
 .task-item-card {
   margin: 2ch;
+  background-color: #f0f0f0;
 }
 .task-item-content {
   display: flex;

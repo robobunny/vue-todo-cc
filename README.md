@@ -15,6 +15,11 @@ To run the unit tests: `npm run test:unit`
 
 To run the end-to-end tests: `npm run test:e2e`
 
+If you want to seed `localStorage` with some tasks, you can crack open the browser console and run:
+
+```
+>> localStorage.setItem('myVueTodoTasks', '{"tasks":[{"text":"The first task","timestamp":1604598706843,"isDone":false},{"text":"The third task","timestamp":1604598785364,"isDone":true},{"text":"Yet another amazing task!","timestamp":1604599105672,"isDone":false},{"text":"Get born","timestamp":545657765432,"isDone":true}]}')
+```
 ## Initial Requirements
 
 1. The app should display a list of TODOs. If the list is empty, then the text "No Todos" should be displayed.
