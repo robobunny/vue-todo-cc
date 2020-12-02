@@ -46,12 +46,6 @@ To mimic a call to the server, (and to flex a bit tbh), I made the `loadTasks()`
 
 For the UI, I'm using ElementUI, in keeping with the tooling used at your company. To keep the build small, I import only the components I use. This meant installing `babel-plugin-component`. It's the first time I've ever used it, and there's a bit of a learning curve, so things don't look great. I can't get the input form to `flex-grow`, for example.
 
-## What I would do differently
-
-I started this project without ever having used Vue, so I wasn't familiar with the paradigms. If I could start over, I would make better use of Vue's `data` object. I think this is a robust model that would be even more advantageous, the more complicated the back end of the app. Since a todo app doesn't have very complex data structures, relying heavily on `prop`s and `$emit`s doesn't get out of hand.
-
-I did not have enough time to learn the Vue tests well. You can see that my functions and classes are well tested using Jest, but I couldn't get the hang of the Vue testing library quick enough to really make use of it yet.
-
 ## Architecture
 
 I try to write my code so that it's pretty self-explanatory, but here's an overview of the architecture, just in case something's not clear:
@@ -116,3 +110,9 @@ This component receives the `TaskList` object as a prop and displays the list of
 #### TaskItem.vue
 
 This component displays the individual task, a "Created at" string, a button for marking it as complete and a button for removing the task (each of which triggers an `$emit`).
+
+## What I would do differently
+
+I started this project without ever having used Vue, so I wasn't familiar with the paradigms. If I could start over, I would make better use of Vue's `data` object. I think this is a robust model that would be even more advantageous, the more complicated the back end of the app. Since a todo app doesn't have very complex data structures, relying heavily on `prop`s and `$emit`s doesn't get out of hand.
+
+I did not have enough time to learn the Vue tests well. You can see that my functions and classes are well tested using Jest, but I couldn't get the hang of the Vue testing library quick enough to really make use of it yet.
